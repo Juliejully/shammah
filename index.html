@@ -18,28 +18,41 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         /* Header */
         header {
             background: #4CAF50;
             color: #fff;
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Reduced padding to decrease height */
             display: flex;
             align-items: center;
-            justify-content: space-between;
         }
 
         .logo {
-            width: 100px;
+            width: 80px; /* Reduced logo size */
             height: auto;
+            margin-left: 10px; /* Moved it slightly away from the edge */
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right; /* Keeps navigation on the right */
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
         }
 
         nav ul li a {
