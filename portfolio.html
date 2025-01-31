@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shammah Printers Shop</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Header */
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio p {
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 0 20px;
+        }
+
+        .portfolio-item {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .portfolio-item h4 {
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Shammah Printers Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <p>Take a look at some of the amazing projects we have completed for our clients.</p>
+            <div class="portfolio-gallery">
+                <div class="portfolio-item">
+                    <img src="P1.png" alt="Project 1">
+                    <h4>Professional Photoshoot</h4>
+                    <p>A stunning portrait session for a corporate client.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="P2.png" alt="Project 2">
+                    <h4>Wedding Video Recording</h4>
+                    <p>High-quality video coverage for a memorable wedding day.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="P3.png" alt="Project 3">
+                    <h4>Document Processing</h4>
+                    <p>Efficient and accurate data entry and document formatting.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="P4.png" alt="Project 4">
+                    <h4>Creative Poster Design</h4>
+                    <p>Eye-catching designs for a local community event.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Shammah Printers Shop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
