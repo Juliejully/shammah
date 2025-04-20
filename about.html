@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Shammah Printers Shop</title>
+    <meta name="description" content="Learn about Shammah Cyber & Photo Studio, your trusted partner for cyber services, professional photoshoots, and video production in Nandi Hills, Nandi County, Kenya.">
+    <meta name="keywords" content="about us, cyber services, photo studio, video production, Shammah, Nandi Hills, Nandi County, Kenya">
+    <meta name="author" content="Shammah Cyber & Photo Studio">
+    <title>About Us - Shammah Cyber & Photo Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f9f9f9;
+            background: #f4f4f9;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -22,79 +33,214 @@
 
         /* Header */
         header {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             color: #fff;
             padding: 1rem 0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Navigation */
+        .logo {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: block; /* Always visible on larger screens */
+        }
+
         nav ul {
             list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+            display: flex;
+            gap: 20px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
 
+        nav ul li a:hover,
         nav ul li a.active {
-            text-decoration: underline;
+            color: #ffd700;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
         }
 
         /* About Section */
         .about {
-            padding: 2rem 0;
+            padding: 4rem 0;
+            background: #fff;
             text-align: center;
         }
 
         .about h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             padding: 0 20px;
         }
 
         .about-box {
-            background: #fff;
-            padding: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             text-align: left;
         }
 
+        .about-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
         .about-box h3 {
-            color: #4CAF50;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about-box p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .about-image {
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #2c3e50;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-links {
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #2c3e50;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .about h2 {
+                font-size: 2rem;
+            }
+
+            .about p {
+                font-size: 1rem;
+            }
+
+            .about-box {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -102,14 +248,16 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <h1>Shammah Printers Shop</h1>
+            <img src="shammah.jpg" alt="Shammah Cyber & Photo Studio Logo" class="logo" loading="lazy">
+            <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                   <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -119,28 +267,50 @@
     <section class="about">
         <div class="container">
             <h2>About Us</h2>
+            <p>Discover the story behind Shammah Cyber & Photo Studio, your trusted partner for innovative cyber and multimedia solutions in Nandi Hills, Nandi County, Kenya.</p>
             <div class="about-content">
                 <div class="about-box">
                     <h3>Who We Are</h3>
-                    <p>Welcome to Shammah Printers Shop, your trusted partner for all online, cyber, and multimedia solutions. Located in the heart of Nandi Hills, Nandi County, Kenya, we pride ourselves on delivering top-notch services to meet the diverse needs of our clients.</p>
+                    <p>Located at SIRET Plaza, Ground Floor, Nandi Hills, Shammah Cyber & Photo Studio is dedicated to providing top-tier online, cyber, and multimedia services. We blend technology and creativity to serve businesses and individuals with excellence.</p>
                 </div>
                 <div class="about-box">
                     <h3>Our Mission</h3>
-                    <p>Our mission is to provide high-quality, reliable, and creative solutions to empower businesses and individuals. Whether you need professional photoshoots, fast and efficient online services, or cyber assistance, we are here to help.</p>
+                    <p>Our mission is to empower our clients with reliable, high-quality solutions. From seamless online services to professional photoshoots and video production, we aim to exceed expectations and drive success.</p>
                 </div>
                 <div class="about-box">
                     <h3>Why Choose Us?</h3>
-                    <p>At Shammah, we combine technology and creativity to bring your ideas to life. Our team is dedicated to ensuring customer satisfaction and excellence in everything we do.</p>
+                    <p>With a commitment to customer satisfaction, our skilled team delivers innovative and personalized services. Choose Shammah for expertise, creativity, and a passion for bringing your ideas to life.</p>
                 </div>
             </div>
+            <div class="about-image">
+                <img src="about-image.jpg" alt="Shammah Cyber & Photo Studio Team" loading="lazy">
+            </div>
+            <a href="contact.html" class="btn" target="_blank">Get in Touch</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Shammah Printers Shop. All rights reserved.</p>
+            <p>© 2025 Shammah Cyber & Photo Studio. All rights reserved.</p>
+            <p>SIRET Plaza, Ground Floor, Nandi Hills, Nandi County, Kenya</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/254714073670" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
