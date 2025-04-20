@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shammah Printers Shop</title>
+    <meta name="description" content="Shammah Cyber & Photo Studio offers top-tier online services, cyber solutions, professional photoshoots, video production, and graphic design in Nandi Hills, Nandi County, Kenya. Book now!">
+    <meta name="keywords" content="cyber services, photo studio, video production, online services, graphic design, Shammah, Nandi Hills, Nandi County, Kenya">
+    <meta name="author" content="Shammah Cyber & Photo Studio">
+    <title>Shammah Cyber & Photo Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f9f9f9;
+            background: #f4f4f9;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -22,47 +33,57 @@
 
         /* Header */
         header {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             color: #fff;
-            padding: 0.4rem 0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            width: 60px;
+            width: 120px;
             height: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #ffeb3b;
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #ffd700;
         }
 
-        /* Dynamic Greeting */
-        .greeting {
-            text-align: center;
+        .menu-toggle {
+            display: none;
             font-size: 1.5rem;
-            font-weight: bold;
-            padding: 1rem;
-            background: #fff;
-            margin-top: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -70,7 +91,7 @@
             background: url('hero-image.jpg') no-repeat center center/cover;
             color: #fff;
             text-align: center;
-            padding: 4rem 0;
+            padding: 6rem 0;
             position: relative;
         }
 
@@ -81,152 +102,471 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
         }
 
-        .hero div {
+        .hero .container {
             position: relative;
             z-index: 1;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
-            background: #ff9800;
+            background: #e74c3c;
             color: #fff;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 2rem;
             text-decoration: none;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: background 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            background: #e68a00;
+            background: #c0392b;
+            transform: translateY(-3px);
         }
 
-        /* Services Overview */
-        .services-overview {
-            padding: 2rem 0;
-            background: #f9f9f9;
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: #fff;
             text-align: center;
         }
 
-        .service-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 1rem;
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
         }
 
-        .service-item {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .services p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background: #f4f4f9;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .testimonials p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .testimonial-card cite {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            color: #3498db;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-details a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .contact textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact button {
+            background: #e74c3c;
+            color: #fff;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .contact button:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #2c3e50;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-links {
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #2c3e50;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services h2,
+            .testimonials h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .services p,
+            .testimonials p,
+            .contact p {
+                font-size: 1rem;
+            }
+
+            .contact-details {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
-<body onload="displayGreeting()">
+<body>
     <!-- Header Section -->
     <header>
         <div class="container">
-            <img src="shammah.jpg" alt="Shammah Printers Shop Logo" class="logo">
+            <img src="shammah.jpg" alt="Shammah Cyber & Photo Studio Logo" class="logo" loading="lazy">
+            <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                     <li><a href="#home" class="active" aria-current="page">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Dynamic Greeting -->
-    <div class="container">
-        <div class="greeting" id="greeting-text"></div>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
-            <h2>Your One-Stop Shop for Online & Printing Solutions!</h2>
-            <p>Experience the best in online services, cyber solutions, and creative multimedia offerings.</p>
-            <a href="services.html" class="btn">Explore Our Services</a>
+            <h1>Capture Moments, Connect Online</h1>
+            <p>Your trusted partner for cyber services, professional photoshoots, video production, and graphic design in Nandi Hills, Nandi County, Kenya.</p>
+            <a href="contact.html" class="btn" target="_blank">Book Now</a>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h3>What We Offer</h3>
-            <div class="service-items">
-                <div class="service-item">
-                    <h4>Online Services</h4>
-                    <p>We handle all your online needs with precision and efficiency.</p>
+            <h2>Our Services</h2>
+            <p>Explore our wide range of professional services designed to meet your needs in Nandi County.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Online Services</h3>
+                    <p>Efficient solutions including email setup, government e-services, and job applications.</p>
                 </div>
-                <div class="service-item">
-                    <h4>Cyber Services</h4>
-                    <p>Fast, reliable internet access and document processing services.</p>
+                <div class="service-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Cyber Services</h3>
+                    <p>Fast internet access, printing, photocopying, and document formatting.</p>
                 </div>
-                <div class="service-item">
-                    <h4>Photoshoots & Video Recording</h4>
-                    <p>Professional photoshoots and high-quality video production for all occasions.</p>
+                <div class="service-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photoshoots</h3>
+                    <p>Professional photography for events, portraits, and commercial needs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Production</h3>
+                    <p>Cinematic video recording and editing for all occasions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Graphic Design</h3>
+                    <p>Creative logos, posters, and branding materials to elevate your business.</p>
                 </div>
             </div>
+            <a href="services.html" class="btn" target="_blank">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from our satisfied clients about their experiences with us.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Shammah delivered stunning photos for our wedding. Highly professional and creative!"</p>
+                    <cite>— Jane & John Doe</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Their cyber services are fast and reliable. I always come back for my printing needs."</p>
+                    <cite>— Michael Smith</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The video production for our business ad was top-notch. Highly recommend!"</p>
+                    <cite>— Sarah Johnson</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Visit us at SIRET Plaza, Nandi Hills, or send us a message to start your project!</p>
+            <div class="contact-details">
+                <p><i class="fas fa-map-marker-alt"></i> SIRET Plaza, Ground Floor, Nandi Hills, Nandi County, Kenya</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254714073670">0714073670</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@shammahstudio.com">info@shammahstudio.com</a></p>
+            </div>
+            <form id="contact-form" action="/submit" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Name">
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Email">
+                <textarea name="message" placeholder="Your Message" required aria-label="Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Shammah Printers Shop. All rights reserved.</p>
+            <p>© 2025 Shammah Cyber & Photo Studio. All rights reserved.</p>
+            <p>SIRET Plaza, Ground Floor, Nandi Hills, Nandi County, Kenya</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/254714073670" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Dynamic Greeting -->
+    <!-- JavaScript -->
     <script>
-        function displayGreeting() {
-            const greetingElement = document.getElementById("greeting-text");
-            const hour = new Date().getHours();
-            let greeting;
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
 
-            if (hour < 12) {
-                greeting = "Good Morning!";
-            } else if (hour < 18) {
-                greeting = "Good Afternoon!";
-            } else {
-                greeting = "Good Evening!";
-            }
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
 
-            greetingElement.innerHTML = `${greeting} Welcome to <strong>Shammah Printers Shop</strong>. We are delighted to serve you!`;
-        }
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form Submission Handling (Placeholder)
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
     </script>
-
 </body>
 </html>
