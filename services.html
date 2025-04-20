@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Shammah Printers Shop</title>
+    <meta name="description" content="Explore the professional services at Shammah Cyber & Photo Studio, including online solutions, cyber services, photoshoots, video production, and graphic design in Nandi County, Kenya.">
+    <meta name="keywords" content="online services, cyber services, photo studio, video production, graphic design, Shammah, Nandi County">
+    <meta name="author" content="Shammah Cyber & Photo Studio">
+    <title>Our Services - Shammah Cyber & Photo Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f9f9f9;
+            background: #f4f4f9;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -22,90 +33,199 @@
 
         /* Header */
         header {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             color: #fff;
             padding: 1rem 0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Navigation */
+        .logo {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
         nav ul {
             list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+            display: flex;
+            gap: 20px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
 
+        nav ul li a:hover,
         nav ul li a.active {
-            text-decoration: underline;
+            color: #ffd700;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
         }
 
         /* Services Section */
         .services {
-            padding: 2rem 0;
+            padding: 4rem 0;
+            background: #fff;
             text-align: center;
         }
 
         .services h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
         }
 
-        .service-items {
+        .services p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             padding: 0 20px;
         }
 
-        .service-item {
-            background: #fff;
-            padding: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .service-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .service-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
+        .service-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
         }
 
-        .service-item h3 {
-            color: #4CAF50;
-            margin-top: 10px;
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #2c3e50;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-links {
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #2c3e50;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .services h2 {
+                font-size: 2rem;
+            }
+
+            .services p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -113,14 +233,17 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <h1>Shammah Printers Shop</h1>
+            <img src="shammah.jpg" alt="Shammah Cyber & Photo Studio Logo" class="logo" loading="lazy">
+            <button class="menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+
+
                 </ul>
             </nav>
         </div>
@@ -130,37 +253,59 @@
     <section class="services">
         <div class="container">
             <h2>Our Services</h2>
-            <p>We offer a range of professional services to cater to your printing, online, and multimedia needs.</p>
-            <div class="service-items">
-                <div class="service-item">
-                    <img src="service1.png" alt="Online Services">
+            <p>We provide a wide range of professional services to meet your cyber, printing, and multimedia needs in Nandi County, Kenya.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
                     <h3>Online Services</h3>
-                    <p>We provide efficient online solutions such as email setup, government e-services, job applications, and data entry.</p>
+                    <p>Efficient solutions including email setup, government e-services, job applications, and data entry.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service2.png" alt="Cyber Services">
+                <div class="service-card">
+                    <i class="fas fa-print"></i>
                     <h3>Cyber Services</h3>
-                    <p>Get fast internet access, printing, photocopying, scanning, and professional document formatting all in one place.</p>
+                    <p>Fast internet access, printing, photocopying, scanning, and professional document formatting.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service3.png" alt="Photoshoots">
-                    <h3>Photoshoots & Video Recording</h3>
-                    <p>We offer high-quality photography and video recording for corporate events, weddings, and special occasions.</p>
+                <div class="service-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photoshoots</h3>
+                    <p>High-quality photography for corporate events, weddings, portraits, and commercial needs.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service4.png" alt="Graphic Design">
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Production</h3>
+                    <p>Professional video recording and editing for events, advertisements, and special occasions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
                     <h3>Graphic Design & Branding</h3>
-                    <p>Our team creates professional logos, posters, business cards, and branding materials to elevate your business.</p>
+                    <p>Creative logos, posters, business cards, and branding materials to elevate your business.</p>
                 </div>
             </div>
+            <a href="contact.html" class="btn" target="_blank">Contact Us for Inquiries</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Shammah Printers Shop. All rights reserved.</p>
+            <p>© 2025 Shammah Cyber & Photo Studio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/254714073670" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
